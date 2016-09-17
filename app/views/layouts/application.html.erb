@@ -19,6 +19,14 @@
     <% end %>
   </div>
 
+  <div id="user-widget">
+    <% if current_user %>
+      Welcome <strong><%= current_user.first_name %></strong>!
+    <% else %>
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <% end %>
+  </div>
+
   <%= yield %>
 </body>
 </html>
